@@ -6,10 +6,11 @@
 
 using asio::ip::tcp;
 
-class AsyncHttpClient {
+class AsyncHttpsClient {
 public:
-  AsyncHttpClient(asio::io_context &io_context, asio::ssl::context &ssl_context,
-                  const std::string &server, const std::string &path)
+  AsyncHttpsClient(asio::io_context &io_context,
+                   asio::ssl::context &ssl_context, const std::string &server,
+                   const std::string &path)
       : resolver_(io_context), socket_(io_context, ssl_context),
         server_(server), path_(path) {}
   void Start() { Resolve(); }
@@ -55,7 +56,7 @@ private:
   }
   void SendRequest() {
     std::ostream request_stream(&request_);
-    request_stream << "GET " << path_ << " HTTP/1.0\r\n";
+    request_stream << "GET " << path_ << " HTTP/1.1\r\n";
     request_stream << "Host: " << server_ << "\r\n";
     request_stream << "Accept: */*\r\n";
     request_stream << "Connection: close\r\n\r\n";
@@ -99,13 +100,15 @@ int main() {
     ssl_context.set_default_verify_paths();
     ssl_context.set_verify_mode(asio::ssl::verify_peer);
 
-    std::string server = "www.example.com";
+    std::string server = "bilibili.com";
     std::string path = "/";
 
-    AsyncHttpClient client(io_context, ssl_context, server, path);
-    client.Start();
-
+    AsyncHttpsClient client(io_context, ssl_context, server, path);
+    client.Start();   // 开启异步调用的任务链
+    io_context.run(); // 进入时间循环
   } catch (std::exception &e) {
     std::cerr << "Exception: " << e.what() << "\n";
   }
+
+  return 0;
 }

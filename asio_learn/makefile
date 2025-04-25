@@ -9,17 +9,17 @@ ASIO_INCLUDE := /home/toni/proj/asio-1.30.2/include
 LDFLAGS := -lssl -lcrypto
 
 # Source files
-SRC_HTTP := sync/sync_http.cpp
-SRC_HTTPS := sync/sync_https.cpp
+SRC_HTTP := sync/sync_http_client.cpp
+SRC_HTTPS := sync/sync_https_client.cpp
 
 SRC_TIMER := async/timer.cpp
-SRC_AHTTPS := async/async_https.cpp
+SRC_AHTTPS := async/async_https_client.cpp
 
 # Output executables
-TARGET_HTTP := sync_http
-TARGET_HTTPS := sync_https
+TARGET_HTTP := sync_http_client
+TARGET_HTTPS := sync_https_client
 TARGET_TIMER := timer
-TARGET_AHTTPS := async_https
+TARGET_AHTTPS := async_https_client
 
 
 # Default target (build both HTTP and HTTPS)

@@ -1,5 +1,4 @@
 #include "asio/error_code.hpp"
-#include "asio/ssl.hpp"
 #include <asio.hpp>
 #include <cstddef>
 #include <iostream>
@@ -27,23 +26,19 @@ void HandleRequest(T &socket, const std::string &server,
 
 void HttpRequests(const std::string &server, const std::string &path) {
   asio::io_context io_context; // 负责调度管理所有的异步操作
-  asio::ssl::context ssl_context(asio::ssl::context::sslv23);
-  ssl_context.set_default_verify_paths();              // 默认的证书路径
-  ssl_context.set_verify_mode(asio::ssl::verify_peer); // 验证格式
 
   tcp::resolver resolver(io_context);
-  auto endpoints = resolver.resolve(server, "https");
+  auto endpoints = resolver.resolve(server, "http");
 
-  asio::ssl::stream<tcp::socket> socket(io_context, ssl_context);
+  tcp::socket socket(io_context);
 
-  asio::connect(socket.lowest_layer(), endpoints);
-  socket.handshake(asio::ssl::stream_base::client); // SSL 握手
+  asio::connect(socket, endpoints);
 
   HandleRequest(socket, server, path);
 }
 
 int main() {
-  const std::string server = "example.com";
+  const std::string server = "bilibili.com";
   const std::string path = "/";
 
   try {
