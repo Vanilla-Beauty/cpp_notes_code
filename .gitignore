@@ -1,2 +1,5 @@
 .vscode
 .cache
+modules
+yalantinglibs_learn/.xmake
+yalantinglibs_learn/build
