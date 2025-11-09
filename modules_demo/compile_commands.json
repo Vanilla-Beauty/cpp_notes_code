@@ -1,0 +1,21 @@
+[
+{
+  "directory": "/home/toni/proj/cpp_notes_code/modules_demo",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++20", "-fmodules-ts", "-D_GLIBCXX_USE_CXX11_ABI=0", "-fmodule-mapper=/tmp/.xmake1000/251109/07c17f413b2dc65fe3d64ed457a11e02/utils.ixx.mapper.txt", "-x", "c++", "-fmodules-ts", "-o", "build/.objs/modules_demo/linux/x86_64/release/src/math/utils.ixx.o", "src/math/utils.ixx"],
+  "file": "src/math/utils.ixx"
+},
+{
+  "directory": "/home/toni/proj/cpp_notes_code/modules_demo",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++20", "-fmodules-ts", "-D_GLIBCXX_USE_CXX11_ABI=0", "-fmodule-mapper=/tmp/.xmake1000/251109/dd7a23e0ffc3464a97e47f6d74a6cc00/math.ixx.mapper.txt", "-x", "c++", "-fmodules-ts", "-o", "build/.objs/modules_demo/linux/x86_64/release/src/math/math.ixx.o", "src/math/math.ixx"],
+  "file": "src/math/math.ixx"
+},
+{
+  "directory": "/home/toni/proj/cpp_notes_code/modules_demo",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++20", "-fmodules-ts", "-D_GLIBCXX_USE_CXX11_ABI=0", "-fmodule-mapper=/tmp/.xmake1000/251109/af07d3fb9212fa9df398e29079ee314d/main.cpp.mapper.txt", "-o", "build/.objs/modules_demo/linux/x86_64/release/src/main.cpp.o", "src/main.cpp"],
+  "file": "src/main.cpp"
+},
+{
+  "directory": "/home/toni/proj/cpp_notes_code/modules_demo",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++20", "-fmodules-ts", "-D_GLIBCXX_USE_CXX11_ABI=0", "-fmodule-mapper=/tmp/.xmake1000/251109/a9e9b096ac43b04c1fb0c06a013521c2/math_impl.cpp.mapper.txt", "-o", "build/.objs/modules_demo/linux/x86_64/release/src/math/math_impl.cpp.o", "src/math/math_impl.cpp"],
+  "file": "src/math/math_impl.cpp"
+}]
