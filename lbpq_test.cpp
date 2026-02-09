@@ -4,9 +4,8 @@
 
 int main() {
   // 连接信息字符串
-  const char *conninfo =
-      "dbname=la_liga user=xwd password=tmdgnnwscjld "
-      "hostaddr=127.0.0.1 port=5432";
+  const char *conninfo = "dbname=la_liga user=xwd password=tmdgnnwscjld "
+                         "hostaddr=127.0.0.1 port=5432";
 
   // 建立连接
   PGconn *conn = PQconnectdb(conninfo);

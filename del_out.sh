@@ -12,5 +12,5 @@ fi
 
 cd "$1"
 
-find . -type f -executable -not -name '*.sh' -print -delete
+find . -type f -executable -not -name '*.sh' -not -name '.git*' -not -name '.vscode*'  -print -delete
 echo "All executable files in '$1' have been removed."

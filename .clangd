@@ -1,3 +1,4 @@
 CompileFlags:
   Add: 
-    - "-I/home/xwd/pgBuild/include"
+    - "-I/home/toni/pgBuild/include"
+    - "-std=c++20"
