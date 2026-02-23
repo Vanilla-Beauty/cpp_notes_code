@@ -1,7 +1,0 @@
-CompileFlags:
-  Add:
-    - "-std=c++23"           # 使用C++23标准
-    - "-fmodules"            # 启用模块支持
-    - "-fbuiltin-module-map" # 启用内置模块映射
-    - "-xc++"               # 明确指定C++语言模式
-  Compiler: /home/toni/llvm_build/bin/clang++
